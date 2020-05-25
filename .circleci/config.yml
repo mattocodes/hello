@@ -12,8 +12,10 @@ jobs:
       - python/install-deps
       - python/save-cache
       - run:
-          command: ./manage.py test
-          name: Test
+          name: run lint
+          command: |
+              . venv/bin/activate
+              make lint
 
 workflows:
   main:
